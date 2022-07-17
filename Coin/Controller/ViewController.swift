@@ -58,6 +58,4 @@ extension ViewController: CoinManagerDelegate {
     func didFailWithError(error: Error) {
         print(error)
     }
-    
-    
 }
