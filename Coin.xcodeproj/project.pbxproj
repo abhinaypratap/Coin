@@ -64,13 +64,13 @@
 			children = (
 				3B9E638E28767DBE00417C4B /* AppDelegate.swift */,
 				3B9E639028767DBE00417C4B /* SceneDelegate.swift */,
+				3BA2B03A2883C22D00E0E060 /* Constants.swift */,
 				3B9E63A228767E4300417C4B /* Model */,
 				3B9E63A328767E4E00417C4B /* View */,
 				3B9E63A428767E5400417C4B /* Controller */,
 				3B9E639728767DC100417C4B /* Assets.xcassets */,
 				3B9E639928767DC100417C4B /* LaunchScreen.storyboard */,
 				3B9E639C28767DC100417C4B /* Info.plist */,
-				3BA2B03A2883C22D00E0E060 /* Constants.swift */,
 			);
 			path = Coin;
 			sourceTree = "<group>";
@@ -340,7 +340,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -368,7 +368,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
