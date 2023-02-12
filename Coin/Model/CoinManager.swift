@@ -1,6 +1,6 @@
 import UIKit
 
-protocol CoinManagerDelegate {
+protocol CoinManagerDelegate: AnyObject {
     func didUpdatePrice(_ coinManager: CoinManager, value: String)
     func didFailWithError(error: Error)
 }
@@ -14,14 +14,14 @@ struct CoinManager {
     ]
 
     func fetchCoinPrice(for currency: String) {
-        let url = "\(K.baseURL)\(currency)?apikey=\(K.APIKey)"
+        let url = "\(Constant.baseURL)\(currency)?apikey=\(Constant.APIKey)"
         performRequest(with: url)
     }
 
     func performRequest(with url: String) {
         if let url = URL(string: url) {
             let session = URLSession(configuration: .default)
-            let task = session.dataTask(with: url) { (data, response, error) in
+            let task = session.dataTask(with: url) { (data, _, error) in
                 if error != nil {
                     self.delegate?.didFailWithError(error: error!)
                     return

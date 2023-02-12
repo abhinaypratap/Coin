@@ -1,6 +1,6 @@
 import UIKit
 
-class ViewController: UIViewController {
+class CoinPriceViewController: UIViewController {
 
     var coinManager = CoinManager()
     @IBOutlet weak var valueLabel: UILabel!
@@ -16,7 +16,7 @@ class ViewController: UIViewController {
 }
 
 // MARK: - UIPickerViewDataSource
-extension ViewController: UIPickerViewDataSource {
+extension CoinPriceViewController: UIPickerViewDataSource {
     func numberOfComponents(in pickerView: UIPickerView) -> Int { 1 }
 
     func pickerView(_ pickerView: UIPickerView,
@@ -26,7 +26,7 @@ extension ViewController: UIPickerViewDataSource {
 }
 
 // MARK: - UIPickerViewDelegate
-extension ViewController: UIPickerViewDelegate {
+extension CoinPriceViewController: UIPickerViewDelegate {
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int,
                     forComponent component: Int) -> String? {
         coinManager.currencyArray[row]
@@ -41,7 +41,7 @@ extension ViewController: UIPickerViewDelegate {
 }
 
 // MARK: - CoinManagerDelegate
-extension ViewController: CoinManagerDelegate {
+extension CoinPriceViewController: CoinManagerDelegate {
     func didUpdatePrice(_ coinManager: CoinManager, value: String) {
         DispatchQueue.main.async {
             self.valueLabel.text = value
