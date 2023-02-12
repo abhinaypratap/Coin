@@ -9,3 +9,4 @@
 - Uses URLSession to make HTTPS requests
 - JSONDecoder for JSON parsing
 - Custom designs for light and dark modes
+- SwiftLint

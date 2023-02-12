@@ -1,10 +1,3 @@
-//
-//  CoinManager.swift
-//  Coin
-//
-//  Created by Abhinay Pratap on 07/07/22.
-//
-
 import UIKit
 
 protocol CoinManagerDelegate {
@@ -12,19 +5,19 @@ protocol CoinManagerDelegate {
     func didFailWithError(error: Error)
 }
 struct CoinManager {
-    
+
     var delegate: CoinManagerDelegate?
-    
+
     let currencyArray = [
-        "AUD","BRL","CAD","CNY","EUR","GBP","HKD","IDR","ILS","INR","JPY",
-        "MXN","NOK","NZD","PLN","RON","RUB","SEK","SGD","USD","ZAR"
+        "AUD", "BRL", "CAD", "CNY", "EUR", "GBP", "HKD", "IDR", "ILS", "INR",
+        "JPY", "MXN", "NOK", "NZD", "PLN", "RON", "RUB", "SEK", "SGD", "USD", "ZAR"
     ]
-    
+
     func fetchCoinPrice(for currency: String) {
         let url = "\(K.baseURL)\(currency)?apikey=\(K.APIKey)"
         performRequest(with: url)
     }
-    
+
     func performRequest(with url: String) {
         if let url = URL(string: url) {
             let session = URLSession(configuration: .default)
@@ -43,7 +36,7 @@ struct CoinManager {
             task.resume()
         }
     }
-    
+
     func parseJSON(_ data: Data) -> Double? {
         let decoder = JSONDecoder()
         do {
